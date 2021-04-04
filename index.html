@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <title>App Flow Redesign</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $( document ).ready( function () {
+            // Add smooth scrolling to all links
+            $( "a" ).on( 'click', function ( event ) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if ( this.hash !== "" ) {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $( 'html, body' ).animate( {
+                        scrollTop: $( hash ).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    } );
+                } // End if
+            } );
+        } );
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+        <header>
+            <nav>
+                <div class="nav2">
+                    <ul>
+                        <li class="navigation"><a href="#analysis">App Analysis</a></li>
+                        <li class="navigation"><a href="#problem">The Problem</a></li>
+                        <li class="navigation"><a href="#users">The Users</a></li>
+                        <li class="navigation"><a href="#solution">The Solution</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="title">
+                <div class="main-title">
+                    <h1>Spotify App Flow<br>Redesign - A Case Study</h1>
+                </div>
+                <div class="title-text">
+                    by Stephen Darling
+                </div>
+            </div>
+        </header>
+        <div class="intro" id="intro">
+            <div class="intro-text">
+                <p>Spotify, one of the most popular music streaming
+                    applications, maintains a strong, easy-to-use design, and
+                    it effectively pushes new digital media to its users in an unobtrusive way. It is safe to say
+                    Spotify
+                    makes accessing one’s music an easy task to accomplish. However, some features, like accessing
+                    and
+                    interacting with one’s user profile, remain an unnecessarily difficult task.</p>
+            </div>
+        </div>
+        <div class="analysis" id="analysis">
+            <div class="analysis-text">
+                <img src="images/spotify.png" alt="A photo of the Spotify logo.">
+                <h2>App Analysis</h2>
+                <h3>The App</h3>
+                <p>The Spotify mobile application leaves little to be desired within a music/podcast streaming
+                    application. The interface is clean, simple, has a wonderful hierarchy of information, and it never
+                    gets in the way of accessing one’s music. An unfortunate result of this is that features like the
+                    <strong>Profile</strong>, which arguably is a less important feature, gets lost in the design
+                    process.
+                <p>The biggest issue with this is that the application everywhere else appears to be close to perfect.
+                    This small oversight really makes me question the motives behind it. In my opinion, this user
+                    experience flaw can and should be fixed, and it would be rather easy to do so.
+                </p>
+                </p>
+                <h3>The Challenge</h3>
+                <p>I knew that I had issues with where Spotify buried the user <strong>Profile</strong> section on their
+                    mobile
+                    application, but I wanted to make sure others felt my pain. Understanding what kind of people used
+                    the Spotify application and what they had to say about the <strong>Profile</strong> section of
+                    Spotify became my
+                    primary challenge. Did other users ever access their profile? Did they care about the profile? Did
+                    they notice a difference compared to other applications like Instagram? All of these were questions
+                    I had to consider when understanding who used this application. Once that data was collected, I was
+                    able to focus on my main goal.</p>
+                <h3>The Goal</h3>
+                <p>My main goal became to slightly redesign the Spotify mobile application so that the user could
+                    access the <strong>Profile</strong> section in an easier way. I wanted to do with while also
+                    prioritizing Spotify’s
+                    simple design. If my design made users’ workflow more difficult, then it would be a failure.
+                    Additionally, if it began to clutter the application, it would also be a failure. I aimed for a
+                    simple solution to a simple problem. </p>
+            </div>
+        </div>
+        <div class="problem" id="problem">
+            <div class="problem-text">
+                <h2>Design Problem</h2>
+                <h3>Defining the Problem</h3>
+                <p>To reach one’s profile in the Spotify mobile application, one must click the settings button,
+                    select the first option that says “View Profile”, and then they are able to view their profile. This
+                    is an issue for a few reasons (Note: the <strong>Profile</strong> section is different from the
+                    “Your Library”
+                    section):</p>
+                <ol>
+                    <li>It is inconsistent with Spotify’s desktop application.</li>
+                    <ul>
+                        <li>In that application, one can see the option to access their profile at any point at the top.
+                        </li>
+                    </ul>
+                    <li>It hides the <strong>Profile</strong> section behind a misleading menu.</li>
+                    <ul>
+                        <li>Normally, users do not access their profile through a settings menu. It is either found
+                            in the main navigation menu (think Instagram) or it is found in a hamburger menu (think
+                            Facebook and Twitter).
+                        </li>
+                    </ul>
+                    <li>It does not take full advantage of the space in the main navigation menu.</li>
+                    <ul>
+                        <li>There are only three options in the navigation menu, meaning there is plenty of room to
+                            place the profile section in there.
+                        </li>
+                    </ul>
+                </ol>
+                <div class="image">
+                    <img src="images/profile-mockup@2x.jpg" alt="Workflow for accessing Profile section 1">
+                    <p>This is the current workflow of navigation to the <strong>Profile</strong> section of the Spotify
+                        mobile application.</p>
+                    <img src="images/mockupWalkthrough.png" alt="Workflow for accessing Profile section 2">
+                    <p>This is a highligthed version of the current workflow to access the <strong>Profile</strong>
+                        section of the application.</p>
+                    <p>With this discovery and list of reasons this was a pain point, I wanted to see if others agreed
+                        with me. I knew I hated the way Spotify makes users access this seciton of the app, and so I
+                        needed confirmation that others found it difficult too.</p>
+                </div>
+                <div class="question">
+                    <h3>Design Question</h3>
+                    <p><em>"How might we improve the experience of users accessing their Profile in the Spotify mobile
+                            application?"</em></p>
+                </div>
+            </div>
+        </div>
+        <div class="users" id="users">
+            <div class="users-text">
+                <h2>The Users</h2>
+                <h3>Who They Are</h3>
+                <p>They are users of the Spotify mobile application, and most of them happen to be students. I did not
+                    tell any of them what the App Redesign was about as to help get their honest opinions on the
+                    <strong>Profile</strong> section of the application.
+                </p>
+                <h3>Their Goals</h3>
+                <ul>
+                    <li>Accessing music</li>
+                    <li>Finding new music or artists</li>
+                    <li>Creating new ways to sort and store music (for example, Playlists)</li>
+                    <li>Adjusting the settings to meet specific needs</li>
+                    <li>Searching for the music/artists</li>
+                </ul>
+                <h3>Research Method</h3>
+                <p>I created a Google Form and sent to a total of 66 people either personally or through group chats. 23
+                    of the 66 people took and submitted the survery, which included the following questions:
+                </p>
+                <ol>
+                    <li>What features of Spotify do you use most frequently?</li>
+                    <li>Which Spotify features need to be improved the most?</li>
+                    <li>How would you rate the Spotify mobile application? (1 to 5 scale)</li>
+                    <li>How would you rate the difficulty of accessing your Spotify profile compared to other apps
+                        like Instagram? (1 to 5 scale)</li>
+                </ol>
+                <p>With these questions, I wanted to prove my hypothesis that there was a pain point in accessing
+                    Spotify’s <strong>Profile</strong> section. Below are the results of this survey displayed through
+                    some graphs. I have noted my thought process of understanding how to improve the application to best
+                    suit its users.</p>
+            </div>
+            <div class="users-findings">
+                <h3>Findings</h3>
+                <img src="images/featruesGraph.png" alt="A graph showing question 1 of survery">
+                <p>None of the users surveryed listed that they use the <strong>Profile</strong> section of the
+                    application most
+                    frequently. This is understandable, but an important place to start when figuring out this pain
+                    point.</p>
+                <img src="images/improvedGraph.png" alt="A graph showing question 2 of survery">
+                <p>A large majority of users said the <strong>Profile</strong> section of the application needs
+                    improvement. This survey helped me fully understand that this was a pain point, thus proving my
+                    hypothesis.</p>
+                <img src="images/rateGraph.png" alt="A graph showing question 3 of survery">
+                <p>I, too, wanted to survey how users thought about the application. I think Spotify's mobile
+                    application is one of the best apps I have on my phone, and as can be seen with this graph, I am not
+                    in the minority.</p>
+                <img src="images/rateProfileGraph.png" alt="A graph showing question 4 of survery">
+                <p>This final graph listend shows a wide variety of data. A majority of those surveryed, however, agree
+                    that there is difficulty in accessing Spotify's <strong>Profile</strong> section of the mobile
+                    application.</p>
+                <p>I even had my housemate try to access his <strong>Profile</strong> on Spotify and he could not
+                    get it
+                    on the first try because of unclear buttons and unclear workflows. This all proved to me that a pain
+                    point existed on this application, and luckily, I felt there was an easy fix to it.</p>
+            </div>
+        </div>
+        <div class="solution" id="solution">
+            <div class="solution-text">
+                <h2>The Solution</h2>
+                <p>This leads us to the solution. I wanted to make a minor, yet important change to the workflow of
+                    accessing the Spotify's <strong>Profile</strong> section. This first started with using up the
+                    whitespace in the navigation bar. Additionally, I wanted to make sure the user knew exactly where to
+                    look for their <strong>Profile</strong>. This was mainly done through taking the
+                    <strong>Profile</strong> section out of a misleading menu, the Settings menu. Below is my change to
+                    the Spotfy mobile application. I used Adobe XD to created my new feature.
+                </p>
+                <img src="images/mockupImprovement.png" alt="Accessing Profile improvement">
+                <p>Here, the <strong>Profile</strong> section is in the main navigation bar. This allows the user to
+                    access it quickly, just like an application like Instagram, and it makes the workflow even easier to
+                    understand.</p>
+                <img src="images/mockupImprovementWalkthrough.png" alt="Workflow for accessing Profile improvement">
+                <p>This is a highligthed version of the changes I made.</p>
+                <p>This simple change helps improve the workflow of navigating around the Spotify application. It helps
+                    the user not be confused by having a <strong>Profile</strong> section buried in a settings menu, and
+                    it helps keep consistency throughout the application. Additionally, I think it would help Spotify
+                    use more features the <strong>Profile</strong> section offers. As of now, the Profile section feels
+                    somewhat half-baked, which is unfortunate because I believe there is a ton of room for more features
+                    to be enhanced and added. It could help users connect with friends and start small networks where
+                    people can share and discover new music.</p>
+            </div>
+        </div>
+        <div class="conclusion">
+            <div class="conclusion-text">
+                <h2>Final Thoughts</h2>
+                <p>Thank you for reading this case study! I personally love Spotify’s mobile application, and so it was
+                    very fun to critique it in hopes to make it better. This project was a part of an App Flow Redeisgn
+                    assignment in my Interactive Design II course at James Madison University. If you have any feedback
+                    or questions, feel free to email me, contact me through my portfolio, or find me on LinkedIn (all
+                    links at the bottom of the page). Also, if you're interested, follow me on Spotify!</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-text">
+                Website by <a target="_blank" href="https://stephendarling20.wixsite.com/sdportfolio">Stephen
+                    Darling</a> | <a href="mailto:stephendarling20@gmail.com">Email Me</a> | <a target="_blank"
+                    href="https://www.linkedin.com/in/stephen-darling-649033176/">LinkedIn</a> |
+                <a target="_blank"
+                    href="https://open.spotify.com/user/stephen.darling?si=Dnj2aaE1Q8ygonaVU8G9Ng">Spotify</a>
+            </div>
+        </footer>
+    </div>
+    </div>
+</body>
+
+</html>
